@@ -29,7 +29,7 @@ body{
 
 section {
     min-height: 100vh;
-    padding: 6rem 4%;
+    padding: 10rem 9% 2rem;
 }
 .header {
     position: fixed;
@@ -571,6 +571,7 @@ span{
         margin-top: 2rem;
     }
 }
+
 
 
 
