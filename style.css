@@ -29,7 +29,7 @@ body{
 
 section {
     min-height: 100vh;
-    padding: 10rem 9%;
+    padding: 6rem 4%;
 }
 .header {
     position: fixed;
@@ -37,7 +37,7 @@ section {
     left: 0;
     width: 100%;
     padding: 2rem 9%;
-    background: var(--bg-color);
+    background: #1f2428cc;
     display: flex;
     justify-content: space-between;
     align-items:center ;
@@ -52,7 +52,7 @@ section {
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
-    cursor: default;
+    cursor: pointer;
 }
 
 .brand {
@@ -70,14 +70,28 @@ section {
 .navbar a{
     font-size: 1.5rem;
     color: var(--text-color);
+    /*justify-content: center;
+    text-align: center;--*/
     margin-left: 4rem;
     transition: 0.3s;
+    text-align: center;
 }
 
 .navbar a:hover,
 .navbar a.active {
     color: var(--main-color);
 } 
+
+.navbar a.button {
+  color:var(--second-bg-color);               /* button text color */
+  background: var(--main-color);
+  padding: .6rem 1.5rem;
+  border-radius: 8rem;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+
 
 #menu-icon {
     font-size: 3.8rem;
@@ -92,14 +106,15 @@ section {
 }
 
 .home-img img{
-    width: 28vw;
-    border-radius: 50%;
-    filter: drop-shadow(0 0 16px var(--main-color));
+    width: 40vw;
+    border-radius: 5%;
+    margin-left: 8rem;
+     /*-filter: drop-shadow(0 0 16px );--*/
     animation: floatImage 4s ease-in-out infinite;
 }
 
 @keyframes floatImage {
-    0% {
+    0%, 100% {
         transform: translateY(0);
     }
     50% {
@@ -107,7 +122,7 @@ section {
     }
     100% {
         transform: translateY(0);
-    }
+}
 }
 
 .home-content h3 {
@@ -184,11 +199,10 @@ span{
 }
 
 .about-img img{
-    border-radius: 70%;
+    border-radius: 10%;
     width: 32vw;
-    filter: drop-shadow(0 0 6px var(--main-color));
     margin-top: -20px;
-    animation: floatImage 4s ease-in-out infinite;
+    
 }
 
 .about-content h2 {
@@ -490,7 +504,7 @@ span{
     }
     .about-img img{
         width: 60vw;
-        margin-bottom: 8rem;
+        margin-bottom: 4rem;
     }
 
     .services h2{
@@ -524,6 +538,7 @@ span{
 @media (max-width: 435px) {
     .home-img img {
         width: 90vw;
+        margin-right: 8rem;
     }
     .about-img img {
         width: 90vw;
@@ -535,5 +550,5 @@ span{
         text-align: center;
         margin-top: 2rem;
     }
-
 }
+
