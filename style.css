@@ -36,7 +36,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 6rem 9%;
+    padding: 2rem 9%;
     background: #1f2428cc;
     display: flex;
     justify-content: space-between;
@@ -571,6 +571,7 @@ span{
         margin-top: 2rem;
     }
 }
+
 
 
 
