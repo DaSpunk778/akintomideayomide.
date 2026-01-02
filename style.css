@@ -82,7 +82,7 @@ section {
     color: var(--main-color);
 } 
 
-/*.navbar a.button {
+.navbar a.button {
   color:var(--second-bg-color);               
   background: var(--main-color);
   padding: .6rem 1.5rem;
@@ -94,7 +94,7 @@ section {
   background: var(--second-bg-color);       
   color: var(--main-color);                   
   box-shadow: 0 0 1rem var(--main-color);
-}--*/
+}
 
 
 
@@ -560,6 +560,7 @@ span{
         margin-top: 2rem;
     }
 }
+
 
 
 
