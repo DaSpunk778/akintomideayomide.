@@ -82,8 +82,8 @@ section {
     color: var(--main-color);
 } 
 
-.navbar a.button {
-  color:var(--second-bg-color);               /* button text color */
+/*.navbar a.button {
+  color:var(--second-bg-color);               
   background: var(--main-color);
   padding: .6rem 1.5rem;
   border-radius: 8rem;
@@ -91,10 +91,10 @@ section {
   transition: 0.3s ease;
 }
 .navbar a.button:hover {
-  background: var(--second-bg-color);         /* button hover background color */
-  color: var(--main-color);                    /* button hover text color */
+  background: var(--second-bg-color);       
+  color: var(--main-color);                   
   box-shadow: 0 0 1rem var(--main-color);
-}
+}--*/
 
 
 
@@ -560,6 +560,7 @@ span{
         margin-top: 2rem;
     }
 }
+
 
 
 
