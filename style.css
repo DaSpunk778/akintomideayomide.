@@ -29,7 +29,7 @@ body{
 
 section {
     min-height: 100vh;
-    padding: 10rem 9% 2rem;
+    padding: 6rem 4%;
 }
 .header {
     position: fixed;
@@ -89,6 +89,11 @@ section {
   border-radius: 8rem;
   font-weight: 600;
   transition: 0.3s ease;
+}
+.navbar a.button:hover {
+  background: var(--second-bg-color);         /* button hover background color */
+  color: var(--main-color);                    /* button hover text color */
+  box-shadow: 0 0 1rem var(--main-color);
 }
 
 
@@ -186,7 +191,9 @@ span{
 }
 
 .btn:hover {
-    box-shadow: none;
+      background: var(--second-bg-color);         /* button hover background color */
+      color: var(--main-color);                    /* button hover text color */
+      box-shadow: 0 0 1rem var(--main-color);
 }
 
 
@@ -486,9 +493,10 @@ span{
     }
 
     .home-img img{
-        width: 55vw;
+        width: 80vw;
         margin-bottom: 3rem;
         margin-top: 4rem;
+        
     }
 
     .home-content h3{
@@ -503,7 +511,7 @@ span{
         flex-direction: column-reverse;
     }
     .about-img img{
-        width: 60vw;
+        width: 70vw;
         margin-bottom: 4rem;
     }
 
@@ -538,7 +546,7 @@ span{
 @media (max-width: 435px) {
     .home-img img {
         width: 90vw;
-        
+        margin-right: 8rem;
     }
     .about-img img {
         width: 90vw;
@@ -551,7 +559,6 @@ span{
         margin-top: 2rem;
     }
 }
-
 
 
 
