@@ -22,8 +22,25 @@ html {
 }
 
 body{
-    background: var(--bg-color);
-    color: var(--text-color);  
+/*background: linear-gradient(
+        135deg,
+        #0b0f14 0%,
+        #141a21 40%,
+        #1f2428 100%
+    );*/
+    color: var(--text-color); 
+
+    background:radial-gradient(
+            circle at 75% 30%,
+            rgba(0, 246, 255, 0.22),
+            transparent 45%
+        ),
+        linear-gradient(
+            120deg,
+            #0b0f14 0%,
+            #141a21 40%,
+            #1f2428 100%
+        );
 }
 
 
@@ -36,7 +53,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 2rem 9%;
+    padding: 2rem 6%;
     background: #1f2428cc;
     display: flex;
     justify-content: space-between;
@@ -47,13 +64,28 @@ section {
 .header.sticky {
     border-bottom: .1rem solid rgba(0, 0, 0, .2);
 }
-
+.row{
+    color: var(--text-color);
+}
 .logo{
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
     cursor: pointer;
+    text-decoration: none;
 }
+.logo img{
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    border-radius: 10px;
+}
+
+
 
 .brand {
     font-size: 20px;  
@@ -83,7 +115,7 @@ section {
 } 
 
 .navbar a.button {
-  color:var(--second-bg-color);               
+  color:var(--second-bg-color);               /* button text color */
   background: var(--main-color);
   padding: .6rem 1.5rem;
   border-radius: 8rem;
@@ -91,8 +123,8 @@ section {
   transition: 0.3s ease;
 }
 .navbar a.button:hover {
-  background: var(--second-bg-color);       
-  color: var(--main-color);                   
+  background: var(--second-bg-color);         /* button hover background color */
+  color: var(--main-color);                    /* button hover text color */
   box-shadow: 0 0 1rem var(--main-color);
 }
 
@@ -107,15 +139,25 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
+    /*margin-top: 50px;--*/
 }
-
+.home-img{
+    position: relative;
+}
 .home-img img{
     width: 40vw;
-    border-radius: 5%;
+    border-radius: 6%;
     margin-left: 8rem;
      /*-filter: drop-shadow(0 0 16px );--*/
     animation: floatImage 4s ease-in-out infinite;
+
+    /* Blend + depth */
+    filter: drop-shadow(0 0 35px rgba(0, 246, 255, 0.35))
+            brightness(1.05)
+            contrast(1.05);
+
+    mix-blend-mode: lighten;
+
 }
 
 @keyframes floatImage {
@@ -196,13 +238,34 @@ span{
       box-shadow: 0 0 1rem var(--main-color);
 }
 
+.btn-project{
+    border: 1px solid #e6e8ef;
+    background: transparent;
+    padding: 10px 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffff;
+}
+
 
 .about {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8rem;
-    background: var(--second-bg-color);
+    background:radial-gradient(
+            circle at 75% 30%,
+            rgba(0, 246, 255, 0.22),
+            transparent 45%
+        ),
+        linear-gradient(
+            120deg,
+            #0b0f14 0%,
+            #141a21 40%,
+            #1f2428 100%
+        );
 }
 
 .about-img img{
@@ -271,20 +334,56 @@ span{
 }
 
 .portfolio {
-    background-color: var(--second-bg-color);
+    background-color: 
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(132, 52, 207, 0.12),
+            transparent 45%
+        ),
+        linear-gradient(
+            135deg,
+            #222630 0%,
+            rgb(34, 38, 46) 55%,
+            #3a4152 100%
+        );
 }
 .portfolio h2{
-    margin-bottom: 5rem;
-    font-size: 4.5rem;
-    text-align: center;
+    
+    font-size: 3.8rem;
+    
+}
+.portfolio p{
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin: 1rem 0 3rem;
+   
+}
+.btn-port{
+    border: 1px solid #e6e8ef;
+    background: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: #ffff;
+    margin-bottom: 2rem;
+    padding: 5px 10px;
+    display: inline-block;
+    margin-right: 1rem;
 }
 
+.btn-port:hover {
+      background: var(--second-bg-color);         /* button hover background color */
+      color: var(--main-color);                    /* button hover text color */
+      box-shadow: 0 0 1rem var(--main-color);
+}
 
 .portfolio-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     gap: 2.5rem;
+    margin-top: 2rem;
 }
 
 .portfolio-container .portfolio-box {
@@ -496,6 +595,7 @@ span{
         width: 80vw;
         margin-bottom: 3rem;
         margin-top: 4rem;
+        margin-left: 0;
         
     }
 
@@ -520,7 +620,12 @@ span{
     }
 
     .portfolio h2{
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
+    }
+    .btn-port{
+        display:inline-table;
+        font-size: 10px
+
     }
     .portfolio-container {
         grid-template-columns: repeat(2, 1fr);
@@ -543,11 +648,10 @@ span{
         width: 100% ;
     }
 }
-@media (max-width: 435px) {
+@media (max-width: 445px) {
     .home-img img {
         width: 90vw;
-       margin-right: 0;
-        margin-left: 0;
+        margin-right: 0;
     }
     .about-img img {
         width: 90vw;
@@ -560,8 +664,6 @@ span{
         margin-top: 2rem;
     }
 }
-
-
 
 
 
