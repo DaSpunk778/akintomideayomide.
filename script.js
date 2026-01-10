@@ -74,6 +74,12 @@ filterLinks.forEach(link => {
         // active state
         filterLinks.forEach(btn => btn.classList.remove("active"));
         link.classList.add("active");
+        link.scrollIntoView({
+  behavior: "smooth",
+  inline: "center",
+  block: "nearest"
+});
+
 
         const filter = link.dataset.filter;
 
