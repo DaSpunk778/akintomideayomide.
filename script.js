@@ -63,3 +63,32 @@ const typed = new Typed('.multiple-text', {
     loop: true
 
 });
+//=========== Portfolio filter ===========//
+const filterLinks = document.querySelectorAll(".btn-port");
+const portfolioCards = document.querySelectorAll(".portfolio-card");
+
+filterLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+        e.preventDefault(); // stop jump
+
+        // active state
+        filterLinks.forEach(btn => btn.classList.remove("active"));
+        link.classList.add("active");
+
+        const filter = link.dataset.filter;
+
+        portfolioCards.forEach(card => {
+            const category = card.dataset.category;
+
+            if (filter === "all" || category === filter) {
+                card.classList.remove("hide");
+            } else {
+                card.classList.add("hide");
+            }
+        });
+    });
+});
+
+portfolioCards.forEach((card, index) => {
+    if (index > 2) card.classList.add("hide");
+});
