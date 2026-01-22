@@ -985,7 +985,7 @@ span {
   .portfolio-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    
   }
 
   .portfolio-card {
@@ -1106,6 +1106,7 @@ span {
     margin-top: 2rem;
   }
 }
+
 
 
 
