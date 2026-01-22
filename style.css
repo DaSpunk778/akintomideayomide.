@@ -977,6 +977,24 @@ span {
   .portfolio-card {
     margin-bottom: .5rem;
   }
+.portfolio {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .portfolio-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .portfolio-card {
+    width: 100%;
+    max-width: 360px;
+    margin: 0 auto 1.8rem;
+  }
+
+
 
   /* ===== ABOUT SECTION ===== */
   .about {
@@ -1016,6 +1034,30 @@ span {
   .contact form .input-box {
     flex-direction: column;
   }
+.contact {
+    padding: 4rem 1.2rem;
+  }
+
+  .contact form {
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  .contact .input-box {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact form input,
+  .contact form textarea {
+    width: 100%;
+  }
+
+  .contact h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
 
 }
 
@@ -1064,5 +1106,6 @@ span {
     margin-top: 2rem;
   }
 }
+
 
 
