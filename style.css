@@ -815,7 +815,7 @@ span {
 /* =========================
    MOBILE RESPONSIVENESS
    ========================= */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
 
   /* ===== HEADER ===== */
   .header {
@@ -1149,6 +1149,7 @@ span {
     margin: 2rem auto 0;
   }
 }
+
 
 
 
