@@ -990,7 +990,7 @@ span {
 
   .portfolio-card {
     width: 100%;
-    max-width: 360px;
+    max-width: 95%;
     margin: 0 auto 1.8rem;
   }
 
@@ -1106,6 +1106,7 @@ span {
     margin-top: 2rem;
   }
 }
+
 
 
 
