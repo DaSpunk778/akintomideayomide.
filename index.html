@@ -25,39 +25,38 @@
     <link rel="stylesheet" href="style.css" />
   </head>
 <script>
+document.addEventListener("DOMContentLoaded", function(){
+
 const scriptURL = "https://script.google.com/macros/s/AKfycbxH00dD4KqhmA694RRjcFVyb6DIIdXjh-8v5f0I2mbgJ7VotBCisEunReh8Q0nErmI/exec";
 
 const form = document.getElementById("contact-form");
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", function(e){
 
   e.preventDefault();
 
-  const formData = {
-    name: form.name.value,
-    email: form.email.value,
-    message: form.message.value
-  };
-
   fetch(scriptURL, {
     method: "POST",
-    body: JSON.stringify(formData),
+    mode: "no-cors",
     headers: {
-      "Content-Type": "application/json"
-    }
-  })
-  .then(response => response.text())
-  .then(data => {
-    alert("Message sent successfully!");
-    form.reset();
-  })
-  .catch(error => {
-    alert("Error sending message");
-    console.error(error);
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: form.name.value,
+      email: form.email.value,
+      message: form.message.value
+    })
   });
+
+  alert("Message sent successfully!");
+
+  form.reset();
+
+});
 
 });
 </script>
+
 
 
   <body>
@@ -93,9 +92,9 @@ form.addEventListener("submit", e => {
 
         <div class="social-media">
           <a href="https://www.facebook.com/TimiTunes"><i class="bxl bx-facebook-square"></i></a>
-          <a href="https://github.com/DaSpunk778"><i class="bxl bx-twitter-x"></i></a>
+          <a href="#"><i class="bxl bx-twitter-x"></i></a>
           <a href="#"><i class="bxl bx-linkedin-square"></i></a>
-          <a href="#"><i class="bxl bx-github"></i></a>
+          <a href="https://github.com/DaSpunk778"><i class="bxl bx-github"></i></a>
           <a href="#"><i class="bxl bx-discord"></i></a>
         </div>
         <a href="#" class="btn">HIRE ME</a>
@@ -457,6 +456,7 @@ form.addEventListener("submit", e => {
     <script src="script.js"></script>
   </body>
 </html>
+
 
 
 
