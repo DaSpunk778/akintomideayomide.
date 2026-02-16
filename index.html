@@ -420,41 +420,46 @@
     <!--My java script file-->
     <script src="script.js"></script>
 
-    <script>
-document.addEventListener("DOMContentLoaded", function(){
+  <script>
 
 const scriptURL = "https://script.google.com/macros/s/AKfycbxH00dD4KqhmA694RRjcFVyb6DIIdXjh-8v5f0I2mbgJ7VotBCisEunReh8Q0nErmI/exec";
 
 const form = document.getElementById("contact-form");
 
+if(form){
+
 form.addEventListener("submit", function(e){
 
-  e.preventDefault();
+    e.preventDefault();
 
-  fetch(scriptURL, {
-    method: "POST",
-    mode: "no-cors",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name: form.name.value,
-      email: form.email.value,
-      message: form.message.value,
-      number: form.number.value
-    })
-  });
+    alert("Submitting form..."); // TEST ALERT
 
-  alert("Message sent successfully!");
+    fetch(scriptURL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value
+        })
+    });
 
-  form.reset();
+    alert("Message sent successfully!");
+
+    form.reset();
 
 });
 
-});
+}
+
 </script>
+
   </body>
 </html>
+
 
 
 
