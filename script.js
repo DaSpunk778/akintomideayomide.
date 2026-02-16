@@ -98,30 +98,7 @@ portfolioCards.forEach((card, index) => {
     if (index > 2) card.classList.add("hide");
 });
 
-//contact messages //
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbxBAVtURzxuwP5hCHxUnpdR7YFn3RZL1bsGhia_uHSNhprNAjCG-uDgU2CeDxrw5so/exec";
 
-document.getElementById("contact-form").addEventListener("submit", function(e){
-  e.preventDefault();
-  
-  const formData = {
-    name: this.name.value,
-    email: this.email.value,
-    message: this.message.value
-  };
-  
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(formData)
-  })
-  .then(res => {
-    alert("Message sent successfully!");
-    document.getElementById("contact-form").reset();
-  })
-  .catch(err => alert("Error sending message"));
-});
-</script>
 
 
 
