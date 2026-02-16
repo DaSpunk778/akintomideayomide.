@@ -24,35 +24,7 @@
     <!--my css link-->
     <link rel="stylesheet" href="style.css" />
   </head>
-  <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbxBAVtURzxuwP5hCHxUnpdR7YFn3RZL1bsGhia_uHSNhprNAjCG-uDgU2CeDxrw5so/exec";
 
-document.getElementById("contact").addEventListener("submit", function(e) {
-  
-  e.preventDefault();
-
-  const formData = {
-    name: this.name.value,
-    email: this.email.value,
-    number: this.number.value,
-    message: this.message.value
-  };
-
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(formData)
-  })
-  .then(response => {
-    alert("Message sent successfully!");
-    document.getElementById("contact").reset();
-  })
-  .catch(error => {
-    alert("Something went wrong.");
-    console.error(error);
-  });
-
-});
-</script>
 
   <body>
     <!--Header section-->
@@ -419,6 +391,35 @@ document.getElementById("contact").addEventListener("submit", function(e) {
         ></textarea>
         <input type="submit" value="Send Message" class="btn" />
       </form>
+        <script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbxBAVtURzxuwP5hCHxUnpdR7YFn3RZL1bsGhia_uHSNhprNAjCG-uDgU2CeDxrw5so/exec";
+
+document.getElementById("contact").addEventListener("submit", function(e) {
+  
+  e.preventDefault();
+
+  const formData = {
+    name: this.name.value,
+    email: this.email.value,
+    number: this.number.value,
+    message: this.message.value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(formData)
+  })
+  .then(response => {
+    alert("Message sent successfully!");
+    document.getElementById("contact").reset();
+  })
+  .catch(error => {
+    alert("Something went wrong.");
+    console.error(error);
+  });
+
+});
+</script>
     </section>
 
     <!--Footer section-->
@@ -445,6 +446,7 @@ document.getElementById("contact").addEventListener("submit", function(e) {
     <script src="script.js"></script>
   </body>
 </html>
+
 
 
 
