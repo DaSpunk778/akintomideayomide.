@@ -24,6 +24,40 @@
     <!--my css link-->
     <link rel="stylesheet" href="style.css" />
   </head>
+<script>
+const scriptURL = "https://script.google.com/macros/s/AKfycbxBAVtURzxuwP5hCHxUnpdR7YFn3RZL1bsGhia_uHSNhprNAjCG-uDgU2CeDxrw5so/exe";
+
+const form = document.getElementById("contact-form");
+
+form.addEventListener("submit", e => {
+
+  e.preventDefault();
+
+  const formData = {
+    name: form.name.value,
+    email: form.email.value,
+    message: form.message.value
+  };
+
+  fetch(scriptURL, {
+    method: "POST",
+    body: JSON.stringify(formData),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+  .then(response => response.text())
+  .then(data => {
+    alert("Message sent successfully!");
+    form.reset();
+  })
+  .catch(error => {
+    alert("Error sending message");
+    console.error(error);
+  });
+
+});
+</script>
 
 
   <body>
@@ -371,56 +405,33 @@
 
     <!--Contact section-->
     <section class="contact" id="contact">
-      <h2 class="heading">Contact <span>Me!</span></h2>
+  <h2 class="heading">Contact <span>Me!</span></h2>
 
-      <form action="#">
-        <div class="input-box">
-          <input type="text" placeholder="Full Name" />
-          <input type="email" placeholder="Email Address" />
-        </div>
-        <div class="input-box">
-          <input type="number" placeholder="Mobile Number" />
-          <input type="text" placeholder="Email Subject" />
-        </div>
-        <textarea
-          name=""
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Your Message"
-        ></textarea>
-        <input type="submit" value="Send Message" class="btn" />
-      </form>
-        <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbxBAVtURzxuwP5hCHxUnpdR7YFn3RZL1bsGhia_uHSNhprNAjCG-uDgU2CeDxrw5so/exec";
+  <form id="contact-form">
 
-document.getElementById("contact").addEventListener("submit", function(e) {
-  
-  e.preventDefault();
+    <div class="input-box">
+      <input type="text" name="name" placeholder="Full Name" required />
+      <input type="email" name="email" placeholder="Email Address" required />
+    </div>
 
-  const formData = {
-    name: this.name.value,
-    email: this.email.value,
-    number: this.number.value,
-    message: this.message.value
-  };
+    <div class="input-box">
+      <input type="text" name="phone" placeholder="Mobile Number" />
+      <input type="text" name="subject" placeholder="Email Subject" />
+    </div>
 
-  fetch(scriptURL, {
-    method: "POST",
-    body: JSON.stringify(formData)
-  })
-  .then(response => {
-    alert("Message sent successfully!");
-    document.getElementById("contact").reset();
-  })
-  .catch(error => {
-    alert("Something went wrong.");
-    console.error(error);
-  });
+    <textarea
+      name="message"
+      cols="30"
+      rows="10"
+      placeholder="Your Message"
+      required
+    ></textarea>
 
-});
-</script>
-    </section>
+    <input type="submit" value="Send Message" class="btn" />
+
+  </form>
+</section>
+
 
     <!--Footer section-->
     <footer class="footer">
@@ -446,6 +457,7 @@ document.getElementById("contact").addEventListener("submit", function(e) {
     <script src="script.js"></script>
   </body>
 </html>
+
 
 
 
